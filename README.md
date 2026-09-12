@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="mailto:YOUR_EMAIL"><img src="https://img.shields.io/badge/Email-me-D14836?style=flat-square" alt="Email"></a>&nbsp;
+  <a href="mailto:gauravml247@gmail.com"><img src="https://img.shields.io/badge/Email-me-D14836?style=flat-square" alt="Email"></a>&nbsp;
   <a href="https://www.linkedin.com/in/analyticsingh/"><img src="https://img.shields.io/badge/LinkedIn-analyticsingh-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;
   <a href="https://github.com/databrickslabs/dqx/pull/1510"><img src="https://img.shields.io/badge/Databricks%20Labs%20DQX-contributor-FF3621?style=flat-square&logo=databricks&logoColor=white" alt="DQX contributor"></a>
 </p>
