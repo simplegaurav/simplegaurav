@@ -49,7 +49,7 @@ Client work is proprietary — happy to walk through architecture and trade-offs
 ## Experience
 
 <!-- Add years to each line. -->
-
+- **Stolt-Nielsen** — Senior Data Engineer, India Development Center (2026 – present)
 - **Tech Mahindra** — Senior Data Engineer; clients: Kroger / 84.51°, GSK Vaccines R&D <!-- confirm you're cleared to name clients publicly -->
 - **Skuad Labs** — founding team (acquired by Payoneer)
 - **Codejudge** — founding team (Sequoia-backed; acquired by Skuad Labs)
