@@ -1,4 +1,4 @@
-<h1 align="center">Gaurav Singh</h1>
+<h1 align="center">Gaurav Singh </h1>
 
 <p align="center">
   Senior Data Engineer &nbsp;·&nbsp; Azure Databricks &nbsp;·&nbsp; Hyderabad, India
