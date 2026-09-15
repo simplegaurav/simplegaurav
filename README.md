@@ -7,20 +7,35 @@
 <p align="center">
   <a href="mailto:gauravml247@gmail.com"><img src="https://img.shields.io/badge/Email-me-D14836?style=flat-square" alt="Email"></a>&nbsp;
   <a href="https://www.linkedin.com/in/analyticsingh/"><img src="https://img.shields.io/badge/LinkedIn-analyticsingh-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;
+  <a href="https://github.com/graphframes/graphframes/pulls?q=is%3Apr+author%3Asimplegaurav+is%3Amerged"><img src="https://img.shields.io/badge/GraphFrames-2%20merged-2E7D32?style=flat-square" alt="GraphFrames merged PRs"></a>&nbsp;
   <a href="https://github.com/databrickslabs/dqx/pull/1510"><img src="https://img.shields.io/badge/Databricks%20Labs%20DQX-contributor-FF3621?style=flat-square&logo=databricks&logoColor=white" alt="DQX contributor"></a>
 </p>
 
 <!-- One placeholder left: YOUR_EMAIL (appears twice). -->
 
-Senior Data Engineer with 8+ years building production data platforms on Azure Databricks — PySpark, Delta Lake, Unity Catalog, Kafka, Airflow, Iceberg — across retail, pharma R&D, fintech and maritime shipping. Previously owned 200+ production pipelines processing 5+ TB/day behind real-time personalisation for 10M+ daily users. Contributor to [Databricks Labs DQX](https://github.com/databrickslabs/dqx).
+Senior Data Engineer with 8+ years building production data platforms on Azure Databricks — PySpark, Delta Lake, Unity Catalog, Kafka, Airflow, Iceberg — across retail, pharma R&D, fintech and maritime shipping. Previously owned 200+ production pipelines processing 5+ TB/day behind real-time personalisation for 10M+ daily users. Contributor to [GraphFrames](https://github.com/graphframes/graphframes) and [Databricks Labs DQX](https://github.com/databrickslabs/dqx).
 
 Two founding-team stints, both acquired (Codejudge → Skuad Labs → Payoneer). I ship with Claude and Cursor in the loop, prefer config-driven frameworks over one-off jobs, and build privacy into the data layer rather than bolting it on.
 
 ## Open source
 
-**Databricks Labs DQX — `is_geo_within_distance`** · [PR #1510](https://github.com/databrickslabs/dqx/pull/1510) · under review <!-- flip to "merged" when it lands -->
+| Project | Contribution | PR | Status |
+|---|---|---|---|
+| **GraphFrames** | Connected components returned silently wrong results — the Python `max_iter` default evaluated to `31`, capping GraphX at 31 supersteps | [#902](https://github.com/graphframes/graphframes/pull/902) | ✅ Merged |
+| **GraphFrames** | Connected components docs contradicted the implementation — wrong defaults, three unusable parameter names, two undocumented behaviours | [#903](https://github.com/graphframes/graphframes/pull/903) | ✅ Merged |
+| **Databricks Labs DQX** | `is_geo_within_distance` — row-level geodesic geofencing check for the data-quality framework | [#1510](https://github.com/databrickslabs/dqx/pull/1510) | 🔍 In review |
 
-A row-level geofencing check for the DQX data-quality framework: flags points farther than *N* metres from a reference point using geodesic distance (`st_distancespheroid` on the WGS 84 ellipsoid) rather than planar degrees. Accepts WKT/WKB/EWKT/GeoJSON via `try_to_geometry`, mixes SRID 0 and 4326 safely, reports invalid and non-point geometries instead of failing, supports per-row distance expressions, and keeps null semantics consistent with the rest of the geo checks. Ships with unit, integration and performance tests, reference docs, and a fix to the existing geo relationship examples. Motivated by vessel-position geofencing in maritime shipping.
+### GraphFrames — connected components correctness
+
+`connectedComponents` declared its `max_iter` default as `2 ^ 31 - 2`. In Python `^` is bitwise XOR and `-` binds tighter, so the default evaluated to **31**, not 2147483646 — capping GraphX Pregel at 31 supersteps and returning **split, silently wrong components** for any graph deeper than that, with no exception and no warning. A 50-vertex path graph returned 19 components instead of 1. Shipped with a behavioural regression test and a signature guard, verified on Spark 3.5 / 4.0 / 4.1 across both PySpark Classic and Spark Connect.
+
+The follow-up reconciled the connected components documentation with the code: the wrong default algorithm and component-ID type, three documented parameters that matched neither the Python nor the Scala API, and two real behaviours nobody had written down — the `spark.checkpoint.dir` fallback that Spark Connect clients depend on, and the AQE mode that is roughly 5× faster than the documented default.
+
+Found while auditing the connected components path — the same algorithm I had been running in production for GDPR deletion.
+
+### Databricks Labs DQX — `is_geo_within_distance`
+
+A row-level geofencing check: flags points farther than *N* metres from a reference point using geodesic distance (`st_distancespheroid` on the WGS 84 ellipsoid) rather than planar degrees. Accepts WKT/WKB/EWKT/GeoJSON via `try_to_geometry`, mixes SRID 0 and 4326 safely, reports invalid and non-point geometries instead of failing, supports per-row distance expressions, and keeps null semantics consistent with the rest of the geo checks. Ships with unit, integration and performance tests, reference docs, and a fix to the existing geo relationship examples. Motivated by vessel-position geofencing in maritime shipping.
 
 ## Production work
 
@@ -63,6 +78,7 @@ Client work is proprietary — happy to walk through architecture and trade-offs
 
 ## Now
 
+- Contributing to GraphFrames — connected components correctness and documentation.
 - Contributing geospatial data-quality checks to DQX.
 - Where I'm heading: AdTech and retail media — audience and identity resolution, data clean rooms, privacy-preserving measurement.
 - Open to Senior / Lead Data Engineer roles on Azure + Databricks — Bangalore, Hyderabad or remote. <!-- visible to your current employer; soften or cut if needed -->
@@ -70,5 +86,15 @@ Client work is proprietary — happy to walk through architecture and trade-offs
 ## Contact
 
 Fastest is email: **gauravml247@gmail.com** — I reply within a day. LinkedIn works too: [linkedin.com/in/analyticsingh](https://www.linkedin.com/in/analyticsingh/).
+
+<!--
+GitHub Sponsors: this badge 404s until the account is enrolled at https://github.com/sponsors.
+Once the sponsors profile is live, delete these comment markers to switch it on.
+
+<p align="center">
+  <a href="https://github.com/sponsors/simplegaurav"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-EA4AAA?style=flat-square&logo=githubsponsors&logoColor=white" alt="Sponsor"></a>
+</p>
+-->
+
 
 <!-- Optional: add a cal.com or Calendly link so people can book 20 minutes directly. -->
