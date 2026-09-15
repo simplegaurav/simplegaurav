@@ -8,7 +8,8 @@
   <a href="mailto:gauravml247@gmail.com"><img src="https://img.shields.io/badge/Email-me-D14836?style=flat-square" alt="Email"></a>&nbsp;
   <a href="https://www.linkedin.com/in/analyticsingh/"><img src="https://img.shields.io/badge/LinkedIn-analyticsingh-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;
   <a href="https://github.com/graphframes/graphframes/pulls?q=is%3Apr+author%3Asimplegaurav+is%3Amerged"><img src="https://img.shields.io/badge/GraphFrames-2%20merged-2E7D32?style=flat-square" alt="GraphFrames merged PRs"></a>&nbsp;
-  <a href="https://github.com/databrickslabs/dqx/pull/1510"><img src="https://img.shields.io/badge/Databricks%20Labs%20DQX-contributor-FF3621?style=flat-square&logo=databricks&logoColor=white" alt="DQX contributor"></a>
+  <a href="https://github.com/databrickslabs/dqx/pull/1510"><img src="https://img.shields.io/badge/Databricks%20Labs%20DQX-contributor-FF3621?style=flat-square&logo=databricks&logoColor=white" alt="DQX contributor"></a>&nbsp;
+  <a href="https://github.com/sponsors/simplegaurav"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-EA4AAA?style=flat-square&logo=githubsponsors&logoColor=white" alt="Sponsor"></a>
 </p>
 
 <!-- One placeholder left: YOUR_EMAIL (appears twice). -->
@@ -87,14 +88,7 @@ Client work is proprietary — happy to walk through architecture and trade-offs
 
 Fastest is email: **gauravml247@gmail.com** — I reply within a day. LinkedIn works too: [linkedin.com/in/analyticsingh](https://www.linkedin.com/in/analyticsingh/).
 
-<!--
-GitHub Sponsors: this badge 404s until the account is enrolled at https://github.com/sponsors.
-Once the sponsors profile is live, delete these comment markers to switch it on.
-
-<p align="center">
-  <a href="https://github.com/sponsors/simplegaurav"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-EA4AAA?style=flat-square&logo=githubsponsors&logoColor=white" alt="Sponsor"></a>
-</p>
--->
+If my open source work is useful to you, you can [sponsor it](https://github.com/sponsors/simplegaurav).
 
 
 <!-- Optional: add a cal.com or Calendly link so people can book 20 minutes directly. -->
