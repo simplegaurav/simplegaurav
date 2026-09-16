@@ -26,7 +26,7 @@ Two founding-team stints, both acquired (Codejudge → Skuad Labs → Payoneer).
 | **GraphFrames** | Connected components docs contradicted the implementation — wrong defaults, three unusable parameter names, two undocumented behaviours | [#903](https://github.com/graphframes/graphframes/pull/903) | ✅ Merged |
 | **Databricks Labs DQX** | `is_geo_within_distance` — row-level geodesic geofencing check for the data-quality framework | [#1510](https://github.com/databrickslabs/dqx/pull/1510) | 🔍 In review |
 
-### GraphFrames — connected components correctness
+### GraphFrames — connected components correctness 
 
 `connectedComponents` declared its `max_iter` default as `2 ^ 31 - 2`. In Python `^` is bitwise XOR and `-` binds tighter, so the default evaluated to **31**, not 2147483646 — capping GraphX Pregel at 31 supersteps and returning **split, silently wrong components** for any graph deeper than that, with no exception and no warning. A 50-vertex path graph returned 19 components instead of 1. Shipped with a behavioural regression test and a signature guard, verified on Spark 3.5 / 4.0 / 4.1 across both PySpark Classic and Spark Connect.
 
